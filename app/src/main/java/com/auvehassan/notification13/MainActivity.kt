@@ -72,7 +72,8 @@ class MainActivity : AppCompatActivity() {
                                             PERMISSION_REQUEST_CODE
                                         )
                                     }
-                                })
+                                }
+                            )
                             return
                         }
                     }
