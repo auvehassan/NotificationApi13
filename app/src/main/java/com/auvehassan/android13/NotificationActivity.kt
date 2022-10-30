@@ -1,4 +1,4 @@
-package com.auvehassan.notification13
+package com.auvehassan.android13
 
 import android.Manifest.permission.POST_NOTIFICATIONS
 import android.app.NotificationManager
@@ -16,12 +16,12 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 
 
-class MainActivity : AppCompatActivity() {
+class NotificationActivity : AppCompatActivity() {
     private val PERMISSION_REQUEST_CODE: Int = 1212
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_notification)
 
         findViewById<Button>(R.id.btnNotification).setOnClickListener {
             if (!checkPermission()) requestPermission() else showNotification()
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showMessageOKCancel(message: String, okListener: DialogInterface.OnClickListener) {
-        AlertDialog.Builder(this@MainActivity)
+        AlertDialog.Builder(this@NotificationActivity)
             .setMessage(message)
             .setPositiveButton("OK", okListener)
             .setNegativeButton("Cancel", null)

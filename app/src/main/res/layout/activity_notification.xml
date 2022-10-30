@@ -4,25 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".NotificationActivity">
 
     <Button
-        android:id="@+id/buttonNotification"
+        android:id="@+id/btnNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Notification"
+        android:text="Show Notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="8dp"/>
-
-    <Button
-        android:id="@+id/buttonCopyPaste"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CopyPaste"
-        app:layout_constraintStart_toEndOf="@id/buttonNotification"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="8dp"/>
+        android:layout_margin="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
