@@ -24,5 +24,13 @@
         app:layout_constraintStart_toEndOf="@id/buttonNotification"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="8dp"/>
+    <Button
+        android:id="@+id/buttonPhotoPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PhotoPicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNotification"
+        android:layout_margin="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

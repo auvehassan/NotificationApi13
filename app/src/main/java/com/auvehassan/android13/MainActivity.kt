@@ -11,5 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<Button>(R.id.buttonNotification).setOnClickListener{startActivity(Intent(this, NotificationActivity::class.java))}
         findViewById<Button>(R.id.buttonCopyPaste).setOnClickListener{startActivity(Intent(this, CopyPasteActivity::class.java))}
+        findViewById<Button>(R.id.buttonPhotoPicker).setOnClickListener{startActivity(Intent(this, PhotoPickerActivity::class.java))}
     }
 }
