@@ -1,4 +1,4 @@
-package com.auvehassan.android13
+package com.auvehassan.android._13
 
 import android.Manifest.permission.POST_NOTIFICATIONS
 import android.app.NotificationManager
@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
-
+import com.auvehassan.android.R
 
 class NotificationActivity : AppCompatActivity() {
     private val PERMISSION_REQUEST_CODE: Int = 1212

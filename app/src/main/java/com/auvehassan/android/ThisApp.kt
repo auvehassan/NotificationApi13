@@ -1,4 +1,4 @@
-package com.auvehassan.android13
+package com.auvehassan.android
 
 import android.app.Application
 import android.app.NotificationChannel

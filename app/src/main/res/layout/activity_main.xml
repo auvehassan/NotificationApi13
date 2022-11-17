@@ -4,33 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.auvehassan.android._13.MainActivity13">
 
 
     <Button
-        android:id="@+id/buttonNotification"
+        android:id="@+id/buttonAndroid12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Notification"
+        android:text="Android 12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="8dp"/>
 
     <Button
-        android:id="@+id/buttonCopyPaste"
+        android:id="@+id/buttonAndroid13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CopyPaste"
-        app:layout_constraintStart_toEndOf="@id/buttonNotification"
+        android:text="Android 13"
+        app:layout_constraintStart_toEndOf="@id/buttonAndroid12"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="8dp"/>
-    <Button
-        android:id="@+id/buttonPhotoPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PhotoPicker"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNotification"
-        android:layout_margin="8dp"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

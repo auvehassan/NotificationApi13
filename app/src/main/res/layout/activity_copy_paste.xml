@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CopyPasteActivity">
+    tools:context="com.auvehassan.android._13.CopyPasteActivity">
 
     <Button
         android:id="@+id/button_copy"
