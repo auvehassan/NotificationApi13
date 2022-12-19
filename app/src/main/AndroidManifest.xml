@@ -11,6 +11,7 @@
         android:name=".ThisApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,8 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notification13"
         tools:targetApi="31">
+        <!--        android:enableOnBackInvokedCallback="true" // Enables this feature. run only on Android 13 and above-->
         <activity
-            android:name=".InAppReviewActivity"
+            android:name="._13.OnBackPressedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".common.InAppReviewActivity"
             android:exported="false" />
         <activity
             android:name="._13.RevokePermission"
