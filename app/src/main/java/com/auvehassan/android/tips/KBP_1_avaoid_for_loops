@@ -1,0 +1,54 @@
+Avoid for-loops
+For loop is a great construct for imperative programming.
+However, if there is a function that does the job for you, it is a better practice to use that function instead.
+
+
+repeat:
+================================================================
+    // DON'T
+    fun main() {
+      for (i in 0 until 10) {
+        println(i)
+      }
+    }
+
+    // DO
+    fun main() {
+      repeat(10) {
+        println(it)
+      }
+    }
+
+forEach:
+================================================================
+    // DON'T
+    fun main() {
+      val list = listOf(1, 2, 3, 4, 5, 6)
+      for (e in list) {
+        println(e)
+      }
+    }
+
+    // DO
+    fun main() {
+      listOf(1, 2, 3, 4, 5, 6).forEach {
+        println(it)
+      }
+    }
+
+map:
+================================================================
+    // DON'T
+    fun main() {
+      val list = listOf(1, 2, 3, 4, 5, 6)
+      val newList = mutableListOf<Int()
+      for (e in list) {
+        newList.add(e * e)
+      }
+    }
+
+    // DO
+    fun main() {
+      val list = listOf(1, 2, 3, 4, 5, 6)
+      val newList = list.map { it * it }
+    }

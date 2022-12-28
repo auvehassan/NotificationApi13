@@ -1,0 +1,128 @@
+Scope functions
+There are 5main scope functions in Kotlin to take advantage of: let, also, apply, with and run.
+
+let scope function
+================================================================
+The let function is used to bypass possible null types.
+
+    fun main() {
+      val age = readLine()?.toIntOrNull()
+
+      age?.let {
+        println("You are $it years old");
+      } ?: println("Wrong input!");
+    }
+
+apply scope function
+================================================================
+This function is used when you wish to change the object's properties or behaviour.
+
+    fun main() {
+      val me = Person().apply {
+        name = "Nishant"
+        age = 19
+        gender = 'M'
+      }
+      println(me)
+    }
+
+with scope function
+================================================================
+This function is used when you want to use the properties of an object. It is just syntactic sugar for the apply function.
+
+    fun main() {
+      val me = with(Person()) {
+        name = "Nishant"
+        age = 19
+        gender = 'M'
+      }
+      println(me)
+    }
+
+
+run scope function
+================================================================
+This function is similar to the let function, but here the object reference is passed down as this instead of it.
+
+    fun main() {
+      val me = Person(
+        name = "Nishant",
+        age = 19,
+        gender = 'M'
+      )
+      me.run {
+        println("My name is $name and I am $age years old.");
+      }
+    }
+
+also scope function
+================================================================
+This takes in an object and performs some additional tasks on it.
+
+    fun main() {
+      Person(
+        name = "Nishant",
+        age = 19,
+        gender = 'M'
+      ).also { println(it) }
+    }
+
+
+Function references
+================================================================
+The code used above isn’t the most optimal. We can further shorten our code by passing in function references to higher-order functions.
+
+    fun main() {
+      val input = readLine()
+      input?.let {
+        val sentence = it.split(" ")
+        sentence.map(String::length).also(::println)
+      }
+    }
+
+String::length passes a lambda function of the type (String) -> Int and ::println passes a lambda function of the type (Int) -> Unit.
+
+Extension values
+===============================================================
+If you are bound to use the same value in multiple places in your code, you might consider using extension values.
+
+    // Extension value that returns an int:
+    // the index of the first single slash
+    private val String.hostEndIndex: Int
+      get() = indexOf('/' , indexOf("//") + 2)
+
+    fun main() {
+      val url = "https://medium.com/@cybercoder.naj"
+      val host = url.substring(0, url.hostEndIndex).substringAfter("//")
+      val path = url.substring(url.hostEndIndex).substringBefore("?")
+    }
+
+
+Lift the return out of conditional structures
+================================================================
+If you have a function that conditionally returns different values,
+instead of having the return inside every line of the conditional structure, you can pull out the return.
+
+    fun main() {
+      println(fibo(6))
+    }
+
+    fun fibo(n: Int): Int {
+      return when(n) {
+        0 -> 0
+        1 -> 1
+        else -> fibo(n - 1) + fibo(n - 2)
+      }
+    }
+
+Furthermore, we can improve this by converting the function block to a single-line expression function.
+
+    fun main() {
+      println(fibo(6))
+    }
+
+    fun fibo(n: Int): Int = when (n) {
+      0 -> 0
+      1 -> 1
+      else -> fibo(n - 1) + fibo(n - 2)
+    }

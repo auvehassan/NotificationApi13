@@ -1,0 +1,39 @@
+Extension operators
+================================================================
+You can find the list of operator functions in the list here. These functions act as syntactic sugar in your code.
+
+    fun main() {
+      val list = mutableListOf(1, 2, 3)
+      (list + 4).forEach(::println)
+    }
+
+    operator fun <T> MutableList<T>.plus(t: T): MutableList<T> {
+      val newList = MutableList<T>().apply { addAll(this) }
+      newList.add(t)
+      return newList
+    }
+
+Infix
+================================================================
+My recent article about Kotlin explains how we can compose two or more functions together.
+
+    infix fun <A, B, C> ((A) -> B).then(other: (B) -> C): (A) -> C {
+        return { other(this(it)) }
+    }
+
+With this function, you can define a function such as:
+
+    val compose = ::f1 then ::f2
+    // f1 and f2 are lambda functions such that the return type
+    // of f1 is the same as the input type of f2.
+
+Typealias
+================================================================
+When you have long type names, you can replace them with a synonymous name with the help of typealias.
+
+    typealias HttpHandler = (Request) -> Response
+    typealias QueryParams = List<Pair<String, String>>
+
+    fun configure(routes: List<Pair<String, HttpHandler>>) {...}
+
+    fun getParams(url: String): QueryParams {...}
