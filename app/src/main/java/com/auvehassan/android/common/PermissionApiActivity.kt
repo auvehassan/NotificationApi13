@@ -94,7 +94,7 @@ class PermissionApiActivity : AppCompatActivity() {
         permissionsList = ArrayList()
         permissionsList?.addAll(permissionsStr)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            askForPermissions(permissionsList?:ArrayList())
+            askForPermissions(permissionsList)
         }
     }
 
