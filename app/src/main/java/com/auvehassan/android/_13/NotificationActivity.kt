@@ -102,3 +102,14 @@ class NotificationActivity : AppCompatActivity() {
         notificationManager.notify(1, notification)
     }
 }
+
+/*
+Add notification permission in android manifest
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- permission for notification in android 13 -->
+
+check permission before adding notification to show
+     checkPermission()
+
+Ask for permission request to enable notification'
+     requestPermission()
+* */
